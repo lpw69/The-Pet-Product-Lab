@@ -164,17 +164,6 @@
             margin-bottom: 1rem;
         }
         
-        .rating {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .stars {
-            color: #ffd700;
-        }
-        
         .read-more {
             background: #2c5530;
             color: white;
@@ -284,81 +273,6 @@
                 gap: 1rem;
             }
         }
-        
-        /* Article Styles */
-        .article-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
-        
-        .article-header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        
-        .article-title {
-            font-size: 2.5rem;
-            color: #2c5530;
-            margin-bottom: 1rem;
-        }
-        
-        .article-meta {
-            color: #666;
-            font-size: 0.9rem;
-        }
-        
-        .article-content h2 {
-            color: #2c5530;
-            margin: 2rem 0 1rem;
-            font-size: 1.8rem;
-        }
-        
-        .article-content h3 {
-            color: #4a7c59;
-            margin: 1.5rem 0 0.5rem;
-        }
-        
-        .product-comparison {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 2rem 0;
-            border-left: 4px solid #2c5530;
-        }
-        
-        .affiliate-button {
-            background: #ff6b35;
-            color: white;
-            padding: 1rem 2rem;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            display: inline-block;
-            margin: 1rem 0;
-            text-align: center;
-            transition: background 0.3s;
-        }
-        
-        .affiliate-button:hover {
-            background: #e55a2b;
-        }
-        
-        .image-placeholder {
-            background: #f0f0f0;
-            border: 2px dashed #ddd;
-            height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 8px;
-            margin: 1rem 0;
-            color: #999;
-            font-style: italic;
-        }
     </style>
 </head>
 <body>
@@ -394,7 +308,7 @@
                 <h2 class="section-title">Latest Buying Guides</h2>
                 <div class="review-grid">
                     <article class="review-card">
-                        <div class="image-placeholder">Cat Litter Product Image</div>
+                        <img src="images/best-cat-litter-odor-control-2025.jpg" alt="Best cat litter brands for odor control compared" class="review-image">
                         <div class="review-content">
                             <h3 class="review-title">Best Cat Litter for Odor Control 2025</h3>
                             <p class="review-excerpt">We researched 15 different cat litters to find which ones actually eliminate odors. Here are our top 5 picks that keep your home fresh.</p>
@@ -489,47 +403,5 @@
             </div>
         </div>
     </footer>
-
-    <!-- Sample Article Template (Hidden) -->
-    <div id="article-template" style="display: none;">
-        <div class="container" style="padding: 2rem 0;">
-            <article class="article-content">
-                <header class="article-header">
-                    <h1 class="article-title">Article Title Here</h1>
-                    <div class="article-meta">
-                        <span>Updated: January 2025</span> | 
-                        <span>By ThePetProductLab Team</span> | 
-                        <span>5 min read</span>
-                    </div>
-                </header>
-                
-                <div class="image-placeholder">Featured Product Image</div>
-                
-                <h2>Quick Summary</h2>
-                <div class="product-comparison">
-                    <p><strong>Our Top Pick:</strong> Product Name - Best overall for most pet owners</p>
-                    <p><strong>Budget Option:</strong> Product Name - Great value without compromising quality</p>
-                    <p><strong>Premium Choice:</strong> Product Name - For pet owners who want the best</p>
-                </div>
-                
-                <h2>Detailed Reviews</h2>
-                <h3>1. Product Name - Our Top Choice</h3>
-                <div class="image-placeholder">Product 1 Image</div>
-                <p>Review content here...</p>
-                <a href="https://amazon.com/product" class="affiliate-button" target="_blank" rel="nofollow">Check Price on Amazon</a>
-                
-                <h3>2. Product Name - Best Budget Option</h3>
-                <div class="image-placeholder">Product 2 Image</div>
-                <p>Review content here...</p>
-                <a href="https://amazon.com/product" class="affiliate-button" target="_blank" rel="nofollow">Check Price on Amazon</a>
-                
-                <h2>Buying Guide</h2>
-                <p>What to look for when choosing...</p>
-                
-                <h2>Frequently Asked Questions</h2>
-                <p>Common questions and answers...</p>
-            </article>
-        </div>
-    </div>
 </body>
 </html>
