@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThePetProductLab - Pet Product Buying Guides & Comparisons</title>
+    <meta name="description" content="Expert buying guides and product comparisons for pet products. Research-driven recommendations for cat litter, dog training collars, and pet feeders.">
+    
+    <!-- SEO Meta Tags -->
+    <meta property="og:title" content="ThePetProductLab - Pet Product Buying Guides">
+    <meta property="og:description" content="Expert buying guides and product comparisons for pet products.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thepetproductlab.com">
+    
+    <!-- Schema Markup for Organization -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "ThePetProductLab",
+        "url": "https://thepetproductlab.com",
+        "description": "Expert buying guides and product comparisons for pet products",
+        "sameAs": [
+            "https://medium.com/@thepetproductlab"
+        ]
+    }
+    </script>
+    
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fafafa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #2c5530;
+            text-decoration: none;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #2c5530;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c5530 0%, #4a7c59 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Featured Reviews Section */
+        .featured-reviews {
+            padding: 4rem 0;
+            background: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2c5530;
+            margin-bottom: 3rem;
+        }
+        
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .review-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+        
+        .review-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: #f5f5f5;
+        }
+        
+        .review-content {
+            padding: 1.5rem;
+        }
+        
+        .review-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #2c5530;
+        }
+        
+        .review-excerpt {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .stars {
+            color: #ffd700;
+        }
+        
+        .read-more {
+            background: #2c5530;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+        
+        .read-more:hover {
+            background: #1e3a21;
+        }
+        
+        /* Categories Section */
+        .categories {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+        
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .category-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-3px);
+        }
+        
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .category-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #2c5530;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2c5530;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            line-height: 1.8;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .disclaimer {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #4a7c59;
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                gap: 1rem;
+            }
+        }
+        
+        /* Article Styles */
+        .article-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .article-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .article-title {
+            font-size: 2.5rem;
+            color: #2c5530;
+            margin-bottom: 1rem;
+        }
+        
+        .article-meta {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .article-content h2 {
+            color: #2c5530;
+            margin: 2rem 0 1rem;
+            font-size: 1.8rem;
+        }
+        
+        .article-content h3 {
+            color: #4a7c59;
+            margin: 1.5rem 0 0.5rem;
+        }
+        
+        .product-comparison {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border-left: 4px solid #2c5530;
+        }
+        
+        .affiliate-button {
+            background: #ff6b35;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            display: inline-block;
+            margin: 1rem 0;
+            text-align: center;
+            transition: background 0.3s;
+        }
+        
+        .affiliate-button:hover {
+            background: #e55a2b;
+        }
+        
+        .image-placeholder {
+            background: #f0f0f0;
+            border: 2px dashed #ddd;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            margin: 1rem 0;
+            color: #999;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">ThePetProductLab</a>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#cat-products">Cat Products</a></li>
+                        <li><a href="#dog-products">Dog Products</a></li>
+                        <li><a href="#reviews">All Reviews</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container">
+                <h1>Expert Pet Product Guides</h1>
+                <p>Research-backed buying guides and product comparisons to help you choose the best products for your pets. No fluff, just facts.</p>
+            </div>
+        </section>
+
+        <!-- Featured Reviews -->
+        <section class="featured-reviews">
+            <div class="container">
+                <h2 class="section-title">Latest Buying Guides</h2>
+                <div class="review-grid">
+                    <article class="review-card">
+                        <div class="image-placeholder">Cat Litter Product Image</div>
+                        <div class="review-content">
+                            <h3 class="review-title">Best Cat Litter for Odor Control 2025</h3>
+                            <p class="review-excerpt">We researched 15 different cat litters to find which ones actually eliminate odors. Here are our top 5 picks that keep your home fresh.</p>
+                            <a href="best-cat-litter-odor-control.html" class="read-more">Read Buying Guide</a>
+                        </div>
+                    </article>
+                    
+                    <article class="review-card">
+                        <div class="image-placeholder">Dog Training Collar Image</div>
+                        <div class="review-content">
+                            <h3 class="review-title">Dog Training Collar Comparison Guide</h3>
+                            <p class="review-excerpt">Remote training collars compared: effectiveness, safety, and value. Find the right training solution for your dog's needs.</p>
+                            <a href="dog-training-collar-guide.html" class="read-more">Read Comparison</a>
+                        </div>
+                    </article>
+                    
+                    <article class="review-card">
+                        <div class="image-placeholder">Automatic Pet Feeder Image</div>
+                        <div class="review-content">
+                            <h3 class="review-title">Top 5 Automatic Pet Feeders Compared</h3>
+                            <p class="review-excerpt">Smart feeding solutions compared for reliability, portion control, and ease of use. Keep your pets fed on schedule.</p>
+                            <a href="automatic-pet-feeder-reviews.html" class="read-more">Read Comparison</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="categories" id="categories">
+            <div class="container">
+                <h2 class="section-title">Browse by Category</h2>
+                <div class="category-grid">
+                    <div class="category-card">
+                        <div class="category-icon">🐱</div>
+                        <h3 class="category-title">Cat Products</h3>
+                        <p>Litter, food, toys, and health products for cats</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">🐶</div>
+                        <h3 class="category-title">Dog Products</h3>
+                        <p>Training tools, food, toys, and accessories for dogs</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">🍽️</div>
+                        <h3 class="category-title">Feeding Solutions</h3>
+                        <p>Automatic feeders, bowls, and feeding accessories</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">🏠</div>
+                        <h3 class="category-title">Home & Care</h3>
+                        <p>Cleaning, grooming, and home care products</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Product Categories</h3>
+                    <ul>
+                        <li><a href="cat-litter-reviews.html">Cat Litter Reviews</a></li>
+                        <li><a href="dog-training-equipment.html">Dog Training</a></li>
+                        <li><a href="pet-feeders.html">Pet Feeders</a></li>
+                        <li><a href="pet-health.html">Pet Health</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="buying-guides.html">Buying Guides</a></li>
+                        <li><a href="product-comparisons.html">Product Comparisons</a></li>
+                        <li><a href="pet-care-tips.html">Pet Care Tips</a></li>
+                        <li><a href="testing-methodology.html">How We Test</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>About</h3>
+                    <ul>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="affiliate-disclosure.html">Affiliate Disclosure</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="disclaimer">
+                <p>© 2025 ThePetProductLab. We are a participant in the Amazon Services LLC Associates Program and other affiliate advertising programs. This means we may earn commissions on qualifying purchases made through our links.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sample Article Template (Hidden) -->
+    <div id="article-template" style="display: none;">
+        <div class="container" style="padding: 2rem 0;">
+            <article class="article-content">
+                <header class="article-header">
+                    <h1 class="article-title">Article Title Here</h1>
+                    <div class="article-meta">
+                        <span>Updated: January 2025</span> | 
+                        <span>By ThePetProductLab Team</span> | 
+                        <span>5 min read</span>
+                    </div>
+                </header>
+                
+                <div class="image-placeholder">Featured Product Image</div>
+                
+                <h2>Quick Summary</h2>
+                <div class="product-comparison">
+                    <p><strong>Our Top Pick:</strong> Product Name - Best overall for most pet owners</p>
+                    <p><strong>Budget Option:</strong> Product Name - Great value without compromising quality</p>
+                    <p><strong>Premium Choice:</strong> Product Name - For pet owners who want the best</p>
+                </div>
+                
+                <h2>Detailed Reviews</h2>
+                <h3>1. Product Name - Our Top Choice</h3>
+                <div class="image-placeholder">Product 1 Image</div>
+                <p>Review content here...</p>
+                <a href="https://amazon.com/product" class="affiliate-button" target="_blank" rel="nofollow">Check Price on Amazon</a>
+                
+                <h3>2. Product Name - Best Budget Option</h3>
+                <div class="image-placeholder">Product 2 Image</div>
+                <p>Review content here...</p>
+                <a href="https://amazon.com/product" class="affiliate-button" target="_blank" rel="nofollow">Check Price on Amazon</a>
+                
+                <h2>Buying Guide</h2>
+                <p>What to look for when choosing...</p>
+                
+                <h2>Frequently Asked Questions</h2>
+                <p>Common questions and answers...</p>
+            </article>
+        </div>
+    </div>
+</body>
+</html>
