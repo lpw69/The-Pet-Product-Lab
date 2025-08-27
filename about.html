@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About ThePetProductLab - Research-Driven Pet Product Reviews</title>
+    <meta name="description" content="Learn about ThePetProductLab's research methodology for pet product comparisons. Data-driven buying guides for dog food, cat litter, and pet accessories.">
+    
+    <!-- SEO Meta Tags -->
+    <meta property="og:title" content="About ThePetProductLab - Research-Driven Pet Product Reviews">
+    <meta property="og:description" content="Learn about our research methodology for comprehensive pet product comparisons and buying guides.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thepetproductlab.com/about.html">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "About ThePetProductLab",
+        "description": "Research methodology and approach to pet product reviews and buying guides",
+        "url": "https://thepetproductlab.com/about.html",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "ThePetProductLab",
+            "description": "Research-driven pet product comparisons and buying guides"
+        }
+    }
+    </script>
+    
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fafafa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #2c5530;
+            text-decoration: none;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover, nav a.active {
+            color: #2c5530;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c5530 0%, #4a7c59 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* About Content */
+        .about-content {
+            padding: 4rem 0;
+            background: white;
+        }
+        
+        .content-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .about-content h2 {
+            color: #2c5530;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .about-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .methodology-section {
+            background: #f8f9fa;
+            padding: 3rem 0;
+        }
+        
+        .methodology-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .methodology-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        
+        .methodology-card h3 {
+            color: #2c5530;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .methodology-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* Transparency Section */
+        .transparency-section {
+            padding: 3rem 0;
+            background: white;
+        }
+        
+        .transparency-content {
+            background: #f0f7f1;
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid #2c5530;
+        }
+        
+        .transparency-content h3 {
+            color: #2c5530;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2c5530;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            line-height: 1.8;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .disclaimer {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #4a7c59;
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">ThePetProductLab</a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html?category=cat">Cat Products</a></li>
+                        <li><a href="index.html?category=dog">Dog Products</a></li>
+                        <li><a href="index.html#reviews">All Reviews</a></li>
+                        <li><a href="about.html" class="active">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>About ThePetProductLab</h1>
+                <p>Research-driven pet product comparisons to help pet owners make informed decisions</p>
+            </div>
+        </section>
+
+        <!-- About Content -->
+        <section class="about-content">
+            <div class="container">
+                <div class="content-wrapper">
+                    <h2>Our Research-Driven Approach</h2>
+                    <p>At ThePetProductLab, we specialize in comprehensive pet product research and analysis. Our buying guides are built on extensive data collection, product specification comparisons, and thorough market analysis rather than hands-on product testing.</p>
+                    
+                    <p>We understand that pet owners need reliable information when choosing products for their beloved companions. That's why our team focuses on aggregating and analyzing data from multiple sources including manufacturer specifications, customer feedback patterns, veterinary recommendations, and industry research to create comprehensive buying guides.</p>
+                    
+                    <p>Our pet product comparisons cover everything from dog food and cat litter to training collars and automatic feeders. Each guide is designed to help pet owners understand the key features, benefits, and considerations for different product categories without the bias that can come from limited hands-on testing.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Methodology Section -->
+        <section class="methodology-section">
+            <div class="container">
+                <div class="content-wrapper">
+                    <h2>Our Research Methodology</h2>
+                    <div class="methodology-grid">
+                        <div class="methodology-card">
+                            <h3>Data Collection & Analysis</h3>
+                            <p>We gather comprehensive data on pet product specifications, pricing trends, and feature comparisons across multiple brands and retailers to provide accurate market analysis.</p>
+                        </div>
+                        
+                        <div class="methodology-card">
+                            <h3>Expert Source Integration</h3>
+                            <p>Our buying guides incorporate insights from veterinary professionals, pet nutrition experts, and industry specialists to ensure our recommendations align with pet health and safety standards.</p>
+                        </div>
+                        
+                        <div class="methodology-card">
+                            <h3>Consumer Feedback Analysis</h3>
+                            <p>We analyze patterns in customer reviews and feedback across multiple platforms to identify common pros, cons, and real-world performance insights for each product category.</p>
+                        </div>
+                        
+                        <div class="methodology-card">
+                            <h3>Continuous Market Research</h3>
+                            <p>Pet product markets evolve rapidly. We continuously update our research to reflect new products, changed formulations, and emerging trends in pet care and nutrition.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transparency Section -->
+        <section class="transparency-section">
+            <div class="container">
+                <div class="content-wrapper">
+                    <div class="transparency-content">
+                        <h3>Transparency & Disclosure</h3>
+                        <p>ThePetProductLab operates as a research and comparison platform. We do not conduct hands-on product testing or maintain physical testing facilities. Instead, our value lies in comprehensive data analysis, market research, and the synthesis of information from multiple authoritative sources.</p>
+                        
+                        <p>As participants in various affiliate programs including Amazon Associates, we may earn commissions when you purchase products through our links. This relationship never influences our research methodology or the objectivity of our product comparisons. Our goal is to provide you with the most comprehensive and unbiased information possible to make informed decisions for your pets.</p>
+                        
+                        <p>We believe transparency is essential in pet product recommendations. All our buying guides clearly indicate our research-based approach and we continuously strive to provide accurate, up-to-date information for pet owners seeking reliable product guidance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Latest Reviews</h3>
+                    <ul>
+                        <li><a href="affordable-dog-food-brands-2025.html">Affordable Dog Food Brands 2025</a></li>
+                        <li><a href="best-rabbit-cage-2025.html">Best Rabbit Cage 2025</a></li>
+                        <li><a href="best-dog-bones-for-chewing-2025.html">Best Dog Bones for Chewing 2025</a></li>
+                        <li><a href="best-outdoor-dog-kennel-2025.html">Best Outdoor Dog Kennel 2025</a></li>
+                        <li><a href="best-dental-chews-for-dogs-2025.html">Best Dental Chews for Dogs 2025</a></li>
+                        <li><a href="best-cockatiel-food-2025.html">Best Cockatiel Food 2025</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="https://medium.com/@thepetproductlab">Medium Articles</a></li>
+                        <li><a href="index.html">Home</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="disclaimer">
+                <p>© 2025 ThePetProductLab. We are a participant in the Amazon Services LLC Associates Program and other affiliate advertising programs. This means we may earn commissions on qualifying purchases made through our links.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
