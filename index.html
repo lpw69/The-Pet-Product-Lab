@@ -426,6 +426,16 @@
     </footer>
 
     <script>
+        // Handle URL parameters on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const category = urlParams.get('category');
+            
+            if (category) {
+                filterProducts(category);
+            }
+        });
+
         function filterProducts(category) {
             const cards = document.querySelectorAll('.review-card');
             
@@ -464,6 +474,10 @@
                     heroTitle.textContent = 'Expert Pet Product Guides';
                     heroDesc.textContent = 'Research-backed buying guides and product comparisons to help you choose the best products for your pets. No fluff, just facts.';
             }
+            
+            // Update URL without page reload (optional)
+            const newUrl = category === 'all' ? 'index.html' : `index.html?category=${category}`;
+            window.history.replaceState({}, '', newUrl);
             
             // Scroll to top smoothly after filtering
             window.scrollTo({
