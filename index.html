@@ -81,6 +81,7 @@
             color: #333;
             font-weight: 500;
             transition: color 0.3s;
+            cursor: pointer;
         }
         
         nav a:hover {
@@ -99,6 +100,7 @@
             font-size: 3rem;
             margin-bottom: 1rem;
             font-weight: 700;
+            transition: all 0.3s ease;
         }
         
         .hero p {
@@ -106,6 +108,7 @@
             opacity: 0.9;
             max-width: 600px;
             margin: 0 auto;
+            transition: all 0.3s ease;
         }
         
         /* Featured Reviews Section */
@@ -133,12 +136,16 @@
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
             overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s ease;
         }
         
         .review-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+        
+        .review-card.hidden {
+            display: none;
         }
         
         .review-image {
@@ -283,9 +290,9 @@
                 <a href="/" class="logo">ThePetProductLab</a>
                 <nav>
                     <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#cat-products">Cat Products</a></li>
-                        <li><a href="#dog-products">Dog Products</a></li>
+                        <li><a href="javascript:void(0)" onclick="filterProducts('all')">Home</a></li>
+                        <li><a href="javascript:void(0)" onclick="filterProducts('cat')">Cat Products</a></li>
+                        <li><a href="javascript:void(0)" onclick="filterProducts('dog')">Dog Products</a></li>
                         <li><a href="#reviews">All Reviews</a></li>
                         <li><a href="#about">About</a></li>
                     </ul>
@@ -308,7 +315,7 @@
             <div class="container">
                 <h2 class="section-title">Latest Buying Guides</h2>
                 <div class="review-grid">
-                    <article class="review-card">
+                    <article class="review-card" data-category="bird">
                         <img src="images/best-cockatiel-food-2025.jpg" alt="Best cockatiel food brands compared for optimal nutrition" class="review-image">
                         <div class="review-content">
                             <h3 class="review-title">Best Cockatiel Food 2025</h3>
@@ -317,7 +324,7 @@
                         </div>
                     </article>
                     
-                    <article class="review-card">
+                    <article class="review-card" data-category="cat">
                         <img src="images/best-cat-litter-odor-control-2025.jpg" alt="Best cat litter brands for odor control compared" class="review-image">
                         <div class="review-content">
                             <h3 class="review-title">Best Cat Litter for Odor Control 2025</h3>
@@ -326,7 +333,7 @@
                         </div>
                     </article>
                     
-                    <article class="review-card">
+                    <article class="review-card" data-category="cat">
                         <img src="images/best-cat-water-fountains-2025.jpg" alt="Best cat water fountains compared for hydration and health" class="review-image">
                         <div class="review-content">
                             <h3 class="review-title">Best Cat Water Fountains 2025</h3>
@@ -335,7 +342,7 @@
                         </div>
                     </article>
                     
-                    <article class="review-card">
+                    <article class="review-card" data-category="dog">
                         <img src="images/dog-training-collar-comparison-guide.jpg" alt="Dog training collar comparison showing different collar types" class="review-image">
                         <div class="review-content">
                             <h3 class="review-title">Dog Training Collar Comparison Guide</h3>
@@ -344,7 +351,7 @@
                         </div>
                     </article>
                     
-                    <article class="review-card">
+                    <article class="review-card" data-category="general">
                         <img src="images/automatic-pet-feeder-comparison-2025.jpg" alt="Top automatic pet feeders compared for reliability and features" class="review-image">
                         <div class="review-content">
                             <h3 class="review-title">Top 5 Automatic Pet Feeders Compared</h3>
@@ -361,30 +368,30 @@
             <div class="container">
                 <h2 class="section-title">Browse by Category</h2>
                 <div class="category-grid">
-                    <div class="category-card">
+                    <div class="category-card" onclick="filterProducts('cat')" style="cursor: pointer;">
                         <div class="category-icon">🐱</div>
                         <h3 class="category-title">Cat Products</h3>
                         <p>Litter, food, toys, and health products for cats</p>
                     </div>
-                    <div class="category-card">
+                    <div class="category-card" onclick="filterProducts('dog')" style="cursor: pointer;">
                         <div class="category-icon">🐶</div>
                         <h3 class="category-title">Dog Products</h3>
                         <p>Training tools, food, toys, and accessories for dogs</p>
                     </div>
-                    <div class="category-card">
+                    <div class="category-card" onclick="filterProducts('bird')" style="cursor: pointer;">
                         <div class="category-icon">🐦</div>
                         <h3 class="category-title">Bird Products</h3>
                         <p>Food, toys, cages, and care products for birds</p>
                     </div>
-                    <div class="category-card">
+                    <div class="category-card" onclick="filterProducts('general')" style="cursor: pointer;">
                         <div class="category-icon">🍽️</div>
                         <h3 class="category-title">Feeding Solutions</h3>
                         <p>Automatic feeders, bowls, and feeding accessories</p>
                     </div>
-                    <div class="category-card">
+                    <div class="category-card" onclick="filterProducts('all')" style="cursor: pointer;">
                         <div class="category-icon">🏠</div>
-                        <h3 class="category-title">Home & Care</h3>
-                        <p>Cleaning, grooming, and home care products</p>
+                        <h3 class="category-title">All Products</h3>
+                        <p>View all our expert product reviews</p>
                     </div>
                 </div>
             </div>
@@ -417,5 +424,53 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        function filterProducts(category) {
+            const cards = document.querySelectorAll('.review-card');
+            
+            cards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                
+                if (category === 'all' || cardCategory === category) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+            
+            // Update the hero section title and description based on category
+            const heroTitle = document.querySelector('.hero h1');
+            const heroDesc = document.querySelector('.hero p');
+            
+            switch(category) {
+                case 'cat':
+                    heroTitle.textContent = 'Cat Product Guides';
+                    heroDesc.textContent = 'Expert buying guides for cat litter, food, toys, and health products. Research-backed recommendations for cat owners.';
+                    break;
+                case 'dog':
+                    heroTitle.textContent = 'Dog Product Guides';
+                    heroDesc.textContent = 'Training tools, food, toys, and accessories for dogs. Expert comparisons to help you choose the best products.';
+                    break;
+                case 'bird':
+                    heroTitle.textContent = 'Bird Product Guides';
+                    heroDesc.textContent = 'Food, toys, cages, and care products for birds. Comprehensive guides for bird owners and enthusiasts.';
+                    break;
+                case 'general':
+                    heroTitle.textContent = 'Pet Care Products';
+                    heroDesc.textContent = 'Automatic feeders, bowls, and feeding accessories suitable for multiple pet types.';
+                    break;
+                default:
+                    heroTitle.textContent = 'Expert Pet Product Guides';
+                    heroDesc.textContent = 'Research-backed buying guides and product comparisons to help you choose the best products for your pets. No fluff, just facts.';
+            }
+            
+            // Scroll to top smoothly after filtering
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
 </body>
 </html>
